@@ -1,0 +1,65 @@
+
+README
+======
+
+<This> is a test bench application for the PID controller.
+
+1. Constructs and inits a PID object
+
+2. Set PID gain values from given inputs
+
+3. Iterates over PID kernal with given set point and plant values
+
+4. In lieu of a unit test, the test bench uses an assert values passed in from the prompt and checks against the final plant value.
+
+DETAILS
+=======
+
+Application is written in C++ and compiled / executed on a "freshly installed" Ubuntu 18.04 hosted on Windows 10 Pro WSL2 platform.
+
+Operating system used:
+  Distributor ID: Ubuntu
+  Description:    Ubuntu 18.04.5 LTS
+  Release:        18.04
+  Codename:       bionic
+
+
+BUILD
+=====
+
+Update the Ubuntu 18.04 system and install the following packages.
+
+  home> sudo apt update
+  home> sudo apt install emacs g++ build-essential libboost-all-dev
+
+If other dependcencies are required, identify the package and install using 'apt install'
+
+Clone the cpp_pid_problem source directory.
+
+  home> git clone <blah>
+
+Compile the source to build the executable and locate the application:
+
+  cpp_pid_problem> make -j 4
+  cpp_pid_problem> ls
+
+Look for the 'build' directory with an executable 'my_pid_app' under it. 
+
+USAGE
+=====
+
+From your current directory, run the application with --help. This is will list the allowed options and give you an example usage with the correct options.
+
+  cpp_pid_problem> ./build/my_pid_app --help
+
+Run the application:
+
+  cpp_pid_problem> ./build/my_pid_app --kp 0.125 --ki 0.25 --kd .0625 --sv 4.2 --iter 80 --assert_value 4.2
+  
+Run the test:
+
+  cpp_pid_problem> make test1
+  cpp_pid_problem> make test2
+  cpp_pid_problem> make test3
+    
+
