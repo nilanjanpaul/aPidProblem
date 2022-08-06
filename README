@@ -36,8 +36,8 @@ If other dependcencies are required, identify the package and install using 'apt
 
 Clone the cpp_pid_problem source directory.
 
-  home> git clone <blah>
-
+  home> git clone https://github.com/nilanjanpaul/aPidProblem.git
+  
 Compile the source to build the executable and locate the application:
 
   cpp_pid_problem> make -j 4
